@@ -1,0 +1,29 @@
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "3",
+    "password": "3"
+}
+
+###
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "1",
+    "password": "1"
+}
+
+###
+POST http://localhost:5000/api/posts
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjJhZmE2NDRhNjRlMDZmNWE0NWQ5NGIiLCJpYXQiOjE3MTQwOTI2NDR9.G9Ngn28aJb9uI3W9XWgr6m6k51IDvlaW-wlZGI-6Eu8
+
+{
+    "title": "132",
+    "description" : "askdhkj",
+    "url" : "google.com",
+    "status": "LEARNED"
+
+}
