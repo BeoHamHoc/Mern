@@ -3,7 +3,24 @@ const router = express.Router();
 const argon2 = require("argon2");
 const User = require("../models/User");
 const jwt = require("jsonwebtoken");
+const verifyToken = require("../middleware/auth");
+
 require("dotenv").config();
+
+// @route GET api/authReducer
+// @desc Check if user is logged in
+// @access Public
+router.get('/', verifyToken, async (req, res) => {
+	try {
+		const user = await User.findById(req.userId).select('-password')
+		if (!user)
+			return res.status(400).json({ success: false, message: 'User not found' })
+		res.json({ success: true, user })
+	} catch (error) {
+		console.log(error)
+		res.status(500).json({ success: false, message: 'Internal server error' })
+	}
+})
 
 // @route POST api/auth/registerr
 // @desc Register user
@@ -73,7 +90,12 @@ router.post("/login", async (req, res) => {
       { userId: user._id },
       process.env.ACCESS_TOKEN_SECRET
     );
-    res.json({ success: true, message: "Login successfully", accessToken,id: user._id });
+    res.json({
+      success: true,
+      message: "Login successfully",
+      accessToken,
+      id: user._id,
+    });
   } catch (error) {
     console.log(error);
     res.status(500).json({ success: false, message: "Sever error" });
