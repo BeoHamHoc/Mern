@@ -5,11 +5,13 @@ import Auth from "./views/auth";
 import AuthContextProvider from "./contexts/AuthContext";
 import Dashboard from "./views/Dashboard";
 import ProtectedRoute from "./components/routing/ProtectedRoute";
+import PostContextProvider from "./contexts/PostContext";
 
 function App() {
   return (
     <>
       <AuthContextProvider>
+        <PostContextProvider>
         <Router>
           <Routes>
             <Route exact path="/" element={<Landing />} />
@@ -24,6 +26,7 @@ function App() {
             </Route>
           </Routes>
         </Router>
+        </PostContextProvider>
       </AuthContextProvider>
     </>
   );

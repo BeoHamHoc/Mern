@@ -4,7 +4,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 import React from "react";
 import Spinner from "react-bootstrap/esm/Spinner";
 import Auth from "../../views/auth";
-
+import NavbarMenu from "../layout/NavbarMenu";
 const ProtectedRoute = ({ component: Component, ...rest }) => {
   const {
     authState: { authLoading, isAuthenticated },
@@ -20,7 +20,9 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
     );
   }
   return isAuthenticated ? (
-    <Outlet />  
+    <>
+    <NavbarMenu />
+    <Outlet /> </> 
   ) : (
     <Navigate to="/login" state={{ from: location }} replace /> 
   );

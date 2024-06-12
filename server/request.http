@@ -18,12 +18,35 @@ Content-Type: application/json
 ###
 POST http://localhost:5000/api/posts
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjJhZmE2NDRhNjRlMDZmNWE0NWQ5NGIiLCJpYXQiOjE3MTQwOTI2NDR9.G9Ngn28aJb9uI3W9XWgr6m6k51IDvlaW-wlZGI-6Eu8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjY1MTQ5ZDI2ZTE1YjNkY2YzMDViZjMiLCJpYXQiOjE3MTgwNjI1NTR9.cgIA6Ey0Zr2bqKoGixcsO-EbgUBxPxZBtcbhv2bpBFM
 
 {
-    "title": "132",
+    "title": "1334532",
+    "description" : "askdhkj",
+    "url" : "google.com",
+    "status": "LEARNING"
+
+}
+
+###
+GET http://localhost:5000/api/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjY1MTQ5ZDI2ZTE1YjNkY2YzMDViZjMiLCJpYXQiOjE3MTgwNjI1NTR9.cgIA6Ey0Zr2bqKoGixcsO-EbgUBxPxZBtcbhv2bpBFM
+
+
+###
+PUT http://localhost:5000/api/posts/66694ca804cd284f7b6c8229
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjY1MTQ5ZDI2ZTE1YjNkY2YzMDViZjMiLCJpYXQiOjE3MTgwNjI1NTR9.cgIA6Ey0Zr2bqKoGixcsO-EbgUBxPxZBtcbhv2bpBFM
+
+{
+    "title": "update vui",
     "description" : "askdhkj",
     "url" : "google.com",
     "status": "LEARNED"
 
 }
+
+###
+DELETE  http://localhost:5000/api/posts/666790e7abdeae894262e654
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjY1MTQ5ZDI2ZTE1YjNkY2YzMDViZjMiLCJpYXQiOjE3MTgwNjI1NTR9.cgIA6Ey0Zr2bqKoGixcsO-EbgUBxPxZBtcbhv2bpBFM
+
